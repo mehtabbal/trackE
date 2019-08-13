@@ -1,0 +1,159 @@
+img{
+  max-width: 100%;
+  height: auto;
+}
+body{
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.btn-sign-in{
+ background-color: #ffb22b;
+ padding: .5rem;
+ color: #046251;
+ border: none;
+}
+.site-nav-main ul{
+  justify-content: flex-end;
+  margin-right: .5rem;
+}
+/*=================== LANDING ===========*/
+.ftr-landing{
+  text-align: center;
+  position: relative;
+}
+.ftr-landing img{
+  /* position: relative; */
+}
+.ftr-landing-details{
+  /* text-align: center; */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3rem
+}
+.ftr-landing span h2,
+.ftr-landing span h4{
+  margin: 0;
+  color: white;
+}
+h1{
+  text-align: center;
+}
+.features{
+  text-align: center;
+  margin: 1rem;
+}
+.features-details{
+  padding: 0 10%;
+}
+.features-img img{
+  max-width: 300px;
+}
+.section-heading{
+  color: #08c4a1;
+  margin-top: 2rem;
+}
+.review{
+  text-align: center;
+  border: 1px solid black;
+  margin: 1rem;
+}
+.review p{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.review .name{
+  background-color: #11445f;
+  margin: 0;
+  padding: 1rem 0;
+  color: white;
+}
+.review img{
+  margin: 1rem;
+  width: auto;
+  height: auto;
+  border-radius: 1rem;
+}
+.btns-action{
+  margin-bottom: .5rem;
+  display: flex;
+  justify-content: space-around;
+}
+.btns-action button{
+  background-color: inherit;
+  border: none;
+  font-weight: bold;
+}
+.readmore-link{
+  color: black;
+  font-style: italic;
+}
+@media screen and (min-width:700px){
+  .features{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+}
+@media screen and (min-width:900px){
+  .customers-reviews{
+    display: flex;
+    /* justify-content: space-around; */
+    flex-flow: row wrap;
+  }
+  .review{
+    flex-grow: 1;
+  }
+
+}
+
+/*=================== FOOTER ==========*/
+footer{
+  text-align: center;
+  background-color: #11445f;
+  color: white;
+  padding: 1.5rem .5rem;
+
+}
+@media screen and (min-width:700px){
+ footer{
+   display: flex;
+   justify-content: space-around;
+ }
+}
+/*=================== HOW IT WORKS ======*/
+/*=================== TEAM ==============*/
+.main-team{
+  text-align: center;
+  background-color: #eef;
+}
+.member{
+  border: 3px solid #11445f;
+  margin: 1rem 5%;
+  padding: 1rem;
+  background-color: white;
+}
+.member h3{
+  margin-bottom: 0;
+}
+.tagline{
+  background-color: #708f9f;
+  margin: 1rem;
+  padding: 1rem;
+}
+.feature-team{
+  opacity: 50%;
+}
+.feature-team img{
+  max-height: 80vh;
+  width: 100%;
+}
+@media screen and (min-width:600px){
+  .members section{
+    display: flex;
+    justify-content: center;
+  }
+}
+/*=================== CONTACT US ========*/

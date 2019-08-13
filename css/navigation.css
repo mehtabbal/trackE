@@ -1,0 +1,102 @@
+ header{
+  display: flex;
+  padding: .5rem .5rem;
+  box-shadow: 0px 10px 10px -15px #222;
+  justify-content: space-between;
+  position: sticky;
+    top:0;
+    background: white;
+  z-index:2;
+}
+.site-nav-main{
+display: none;
+  text-align: center;
+
+}
+.site-nav-main a {
+ padding: 1rem;
+}
+
+.menu-toggle-mobile .site-nav-main {
+display:flex;
+position: absolute;
+ left:0;
+ top: 3.5rem;
+ width: 100%;
+ background-color: white;
+}
+.menu-toggle-mobile .site-nav-main ul {
+  display: flex;
+   flex-flow: column;
+   width:100%;
+   justify-content: center;
+}
+
+a{
+  display: block;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.site-nav-main a{
+  color: rgb(10, 168, 105);
+  padding: .5rem .5rem;
+}
+.site-nav-main a:hover{
+  text-decoration: underline;
+}
+.site-nav-main .active{
+  text-decoration: underline;
+}
+.menu-toggle{
+  background: none;
+  border: none;
+
+}
+.menu-toggle i{
+  color: green;
+  font-size:36px;
+}
+
+.add{
+  color: #FFB22B;
+}
+
+@media screen and (min-width:600px) {
+
+.menu-mobile{
+  display: none;
+}
+.site-nav-main{
+  position: relative;
+  margin: 0;
+}
+
+
+
+.site-nav-main{
+  flex-grow: 1;
+  display: flex;
+}
+.site-nav-main ul{
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+}
+.site-nav-main ul{
+  display: flex;
+  align-items: center;
+}
+
+
+.site-logo-main img {
+  min-width: 107px;
+}
+
+}

@@ -1,0 +1,59 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+
+
+/*----nav bar----*/
+
+
+/*main area*/
+
+
+
+article{
+  background-color: grey;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 10% 0 10%;
+}
+#graph{
+  color:white;
+  background: black;
+  border:none;
+  width: 100%;
+  padding: 1rem;
+  height: 15rem;
+  width: 15rem;
+  margin-bottom: 3%;
+}
+P{
+
+
+}
+
+@media screen and (min-width:600px){
+  article{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+  text-align: left;
+  }
+  #graph{
+    width: 25rem;
+    height:5rem;
+  }
+  #graph a {
+    text-decoration: none;
+    color:white;
+    display: block;
+  }
+
+ 
+main{
+margin-top: 2rem;
+}
+
+}

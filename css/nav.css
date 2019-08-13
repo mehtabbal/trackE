@@ -1,0 +1,104 @@
+nav ul{
+ padding: 0;
+}
+nav{
+  margin-right: 100%;
+  overflow-x: hidden;
+}
+nav li{
+  list-style-type: none;
+  text-align: center;
+  padding: 1rem;  //remember to change at full view
+}
+nav li a {
+  text-decoration: none;
+  }
+
+.menu-mobile {
+  display: flex;
+  justify-content: space-between;
+  padding:1rem;
+}
+.menu-toggle{
+  background: none;
+  color:white;
+}
+
+.menu-toggle-mobile nav {
+  margin-right: 0;
+  transition: all .65s ease-in-out;
+}
+
+.menu-toggle-mobile main {
+  margin-top: 2rem;
+}
+
+.logo2{
+  display: none;
+}
+.menu-mobile{
+background-color:rgb(10, 168, 105);
+}
+nav{
+  background-color:rgb(10, 168, 105);
+}
+nav a {
+  text-decoration: none;
+  padding: 1rem;
+  color:white;
+}
+nav a:hover {
+  text-decoration: underline;
+ }
+ main {
+   margin: -13rem 4rem 3rem 4rem; //change it to 5rem on full view
+   margin-left: 4rem;
+   margin-right: 4rem;
+ }
+ 
+
+
+
+
+
+
+
+
+
+@media screen and (min-width:600px) {
+
+
+.menu-toggle{
+  display: none;
+}
+.logo2{
+  display: block;
+}
+nav{
+  margin: 0;
+}
+nav li{
+  display: inline-block;
+  padding: 0;
+}
+nav a{
+  padding: 1rem;
+}
+.header {
+display:grid;
+grid-template-columns: 1fr 1fr 1fr;
+background-color:rgb(10, 168, 105);
+padding: 1rem;
+}
+.logo2{
+  text-align: right;
+  margin-right: .5rem;
+}
+
+
+
+main {
+  margin-top: 3rem;
+
+}
+}

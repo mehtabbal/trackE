@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TrackE</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/nav.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+  <header>
+    <div class="menu-mobile">
+      <button class="menu-toggle"><i class="fa fa-bars"></i></button>
+    </div>
+    <div class="site-logo-main">
+      <a href="../dashboard.html"><img src="../images/TrackE_logo.png" alt="tracke_logo"></a>
+    </div>
+    <nav class="site-nav-main">
+      <ul>
+        <li><a  href="../dashboard.html">Dashboard</a></li>
+        <li><a class="active" href="savings.html">Savings</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </nav>
+    <div class="plus-sign">
+   <i class="fa fa-plus-circle add" style="font-size:40px;"></i>
+    </div>
+   </header>
+
+
+<div style=" height:400px; width:800px">
+  <canvas id="myChart" width="400" height="400"  style="border:2px solid red">
+
+  </canvas>
+    <script src="../js/script.js"></script>
+</div>
+
+
+
+
+
+</body>
+</html>

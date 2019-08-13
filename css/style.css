@@ -1,0 +1,588 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.details  {
+
+  position:fixed;
+      left:10%;
+      right:10%;
+      top:20%;
+background-color: #11445F;
+height:auto;
+border-radius: 1rem;
+z-index: 3;
+
+}
+
+
+
+.pop-up .dashboard{
+  opacity:.5;
+}
+
+@media screen and (min-width:750px){
+  .details {
+    position:fixed;
+        left:33%;
+        right:33%;
+        top:20%;
+  }
+}
+
+#details-buttons{
+    text-align: center;
+}
+
+#details-buttons button {
+    padding: 1rem;
+    text-align: center;
+    background: white;
+    width:90%;
+    margin: 1rem 0 1.5rem 0;
+    border-radius: 1rem;
+    border:none;
+}
+
+.details input {
+  padding: .5rem;
+  border-radius:1rem;
+  border:none;
+  width:90%;
+ margin-top: 0;
+}
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+  align-items: center;
+  color:white;
+}
+
+.window-close {
+  background: none;
+  border:none;
+}
+.window-close i{
+  font-size: 30px;
+  background: none;
+  color: white;
+  margin: 1rem 1rem 0 0;
+}
+
+
+.information-input-area{
+text-align: center;
+}
+.information-input-area p{
+  color: white;
+  text-align: left;
+  margin-left: .6rem;
+  margin-bottom:0.2rem;
+}
+
+.bottom-row-buttons{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  text-align: center;
+  padding: 1rem;
+}
+.bottom-row-buttons button {
+  background: white;
+  border:none;
+  padding:1rem;
+  border-radius:.5rem;
+  width: 45%;
+}
+#addbtn {
+  background: #FFB22B;
+}
+#savings-quote {
+  text-align: center;
+  color:white;
+}
+
+
+
+
+
+.details-add {
+  visibility:hidden;
+}
+
+.pop-up .details-add {
+visibility: visible;
+-webkit-animation: fadeIn .5s;
+  animation: fadeIn .5s;
+}
+.pop-up header{
+  opacity: .2;
+}
+.pop-up .history-main {
+  opacity: 0.2;
+}
+.pop-up .dashboard {
+  opacity: 0.2;
+}
+.pop-up .settings-area {
+  opacity: 0.2;
+}
+.pop-up .savings-area {
+  opacity: 0.2;
+}
+
+
+
+.details-expenses {
+  visibility: hidden;
+}
+.pop-up-expense .details-expenses {
+  visibility: visible;
+
+}
+.details-income {
+  visibility: hidden;
+}
+.pop-up-income .details-income {
+  visibility: visible;
+}
+
+.details-savings {
+  visibility: hidden;
+}
+.pop-up-savings .details-savings {
+  visibility:visible;
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+
+
+/*========================== DASHBOARD =====*/
+/*========================== DASHBOARD =====*/
+table {
+  border-collapse:collapse;
+  width: 100%;
+  }
+  .table-area{
+    margin: 1rem;
+  }
+.expense-table, .income-table {
+  padding: 2rem;
+}
+
+.table-area th {
+  background-color: #11445F;
+  color:white;
+  text-align: left;
+  padding: 0.8rem 1rem 0.8rem .5rem;
+}
+.pie-chart {
+  margin-left: 50px;
+}
+.plus-sign-tables {
+text-align: right;
+margin-top: .5rem;
+}
+
+.table-area td,th{
+  border: 1px solid #ddd;
+}
+.table-area td {
+  padding: .5rem;
+}
+th:nth-of-type(2n+1){
+  width: 70%;
+}
+
+@media screen and (min-width:600px){
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 2rem;
+    margin-top: 2rem;
+  }
+  .table-area {
+    width: 100%;
+  }
+  table{
+    width: 80%;
+  }
+  .plus-sign-tables{
+    width: 80%;
+  }
+
+}
+
+
+
+/*  @media screen and (min-width:600px) {
+
+} */
+
+/*=============pop-up screens=======================*/
+
+/*=============history page=======================*/
+.months {
+  margin-right: .5rem;
+}
+.months article {
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin: .5rem;
+}
+.years article {
+  border: 1px solid black;
+  border-radius: .5rem;
+  margin-left: 0.5rem;
+  margin-top: .5rem;
+}
+
+.graph-history {
+  margin-bottom: .5rem;
+
+}
+.years .graph-history {
+  height:25rem;
+  width:25rem;
+}
+
+@media screen and (min-width:700px){
+
+.history-main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: .5rem;
+  overflow-x: hidden;
+}
+.history-main h3 {
+  margin: .5rem;
+}
+
+}
+
+
+/*============= Saving page=======================*/
+.saving-goals{
+  background-color: lightgrey;
+  border-radius: 20px;
+  border: none;
+}
+.graph-saving-goals{
+  margin: .5rem;
+}
+.details-saving-goals{
+  margin: .5rem;
+}
+.details-saving-goals h3{
+  border-left: 2px solid rgb(10, 168, 105);
+  border-bottom: none;
+  margin-left: 0;
+  padding-left: .5rem;
+}
+
+@media screen and (min-width:600px){
+  .saving-goals{
+    display: flex;
+  }
+  .details-saving-goals{
+    flex-grow: 1;
+  }
+}
+
+@media screen and (min-width:600px){
+  .years{
+    display: flex;
+    flex-direction: column;
+  }
+  .history-main{
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-gap: 1rem;
+  }
+  .months{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1000px){
+  .months{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/*============= login - page=======================*/
+
+#login-area-logo{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.login-area{
+  margin: 10% 10% auto 5%;
+}
+
+.enter-login-details input {
+  border-radius: .50rem;
+  padding: .75rem;
+  border:none;
+  background: #ECECEE;
+  width: 100%;
+  margin-top: 5px;
+}
+
+#sign-in-btn, #create-account-btn {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+#sign-in-btn button {
+ padding: .6rem;
+ border:none;
+  border-radius: .6rem;
+  width: 20%;
+  color:black;
+  background: #FFB22B;
+}
+
+#create-account-btn button {
+ padding: .6rem;
+ border:none;
+  border-radius: .6rem;
+  width: 40%;
+  color:black;
+  background: #FFB22B;
+}
+
+.sign-in-remember {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.sign-in-remember a {
+  text-decoration: none;
+  color:black;
+}
+
+/*input#check-box{
+
+            width: 20px;
+            height: 20px;
+} */
+
+@media screen and (min-width:800px){
+  .login-area {
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    right:35%;
+
+      margin: 0;
+
+
+  }
+}
+
+
+/*============= Contact page=======================*/
+
+
+/*========================== CONTACT-PAGE ===============================*/
+
+.contact-area {
+
+}
+
+#contact-area-logo{
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-area input{
+  border-radius: .50rem;
+  padding: .75rem;
+  border:none;
+  background: #ECECEE;
+  width: 100%;
+  margin-top: 5px;
+
+}
+
+.contact-area{
+
+margin: 5% 10% 10% 5% ;
+
+}
+
+#submit-message {
+  width:30%;
+  background: #FFB22B;
+}
+textarea{
+  width: 100%;
+  height: 5rem;
+  border-radius: .5rem;
+}
+
+
+
+
+@media screen and (min-width:600px) {
+  .contact-area{
+    position: absolute;
+    top: 12%;
+    left: 35%;
+    right:35%;
+margin: 0 ;
+margin-bottom: 2rem;
+
+  }
+}
+
+
+
+
+/* ===================================SETTINGS PAGE=============================== */
+
+/*=============================================== SETTINGS PAGE ===============================================*/
+
+.settings-area {
+ display: grid;
+ grid-template-columns: 3fr 1fr;
+ grid-gap: 1rem;
+ position: relative;
+
+  z-index:1;
+ width: 100%;
+
+}
+
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:wrap;
+}
+.side-bar button {
+
+  padding: 1.5rem;
+  background:none;
+  border:none;
+  text-align: left;
+
+}
+.side-bar button:nth-of-type(1){
+  margin-top: 4rem;
+}
+
+.side-bar i {
+  font-size: 20px;
+}
+.settings-area a {
+  display: inline-block;
+  color: black;
+  padding-left:0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.settings-main {
+
+  background: lightgrey;
+}
+.details-container{
+  background: lightgrey;
+  height: 100vh;
+  border-radius: 1rem;
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+.details-container img {
+  position: fixed;
+    top:50vh;
+    left:30vw;
+}
+
+.settings-details{
+  width: 30%;
+  background-color: #11445F;
+  border-radius: 1rem;
+  position:absolute;
+    left: 22%;
+    top: 25%;
+  text-align: center;
+}
+
+
+.settings-details input {
+
+    padding: .5rem;
+    border-radius:1rem;
+    border:none;
+    width:90%;
+
+
+
+}
+.settings-details p {
+color: white;
+text-align: left;
+margin-left: .6rem;
+margin-bottom:0.2rem;
+}
+
+.settings-bottom-row-buttons{
+  text-align: left;
+}
+.settings-confirm-btn  {
+  padding: .5rem;
+  color:white;
+  text-align: center;
+  background: orange;
+
+  margin: 1rem 0 1.5rem .5rem;
+  border-radius: .5rem;
+  border:none;
+}
+
+
+input[type="checkbox"]{
+height: 1rem;
+
+}
+
+.change-usr, .change-pass, .change-e-mail, .notifications {
+  visibility: hidden;
+}
+.pop-up-settings .change-usr {
+  visibility: visible;
+}
+.pop-up-settings_2 .change-pass {
+  visibility: visible;
+}
+.pop-up-settings_3 .change-e-mail {
+  visibility: visible;
+}
+.pop-up-settings_4 .notifications {
+  visibility: visible;
+}
+
+
+/* =================================== SIGN UP PAGE  =============================== */
+
+/*============================== extra additions ================= */
+#sign-up-btn {
+
+  padding: .75rem;
+  background: orange;
+  border-radius: 0.45rem;
+  border:none;
+}

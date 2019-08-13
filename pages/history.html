@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>TrackE</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <!-- <link rel="stylesheet" href="../css/nav.css"> -->
+  <link rel="stylesheet" href="../css/navigation.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="menu-mobile">
+      <button class="menu-toggle"><i class="fa fa-bars"></i></button>
+    </div>
+    <div class="site-logo-main">
+      <a href="../dashboard.html"><img src="../images/TrackE_logo.png" alt="tracke_logo"></a>
+    </div>
+    <nav class="site-nav-main">
+      <ul>
+        <li><a  href="../dashboard.html">Dashboard</a></li>
+        <li><a href="../pages/savings.html">Savings</a></li>
+        <li><a class= "active" href="history.html">History</a></li>
+        <li><a href="../pages/settings.html">Settings</a></li>
+      </ul>
+    </nav>
+    <div class="plus-sign">
+   <i class="fa fa-plus-circle add" style="font-size:40px;"></i>
+    </div>
+   </header>
+
+   <div class="details-main">
+
+         <div class="details details-add">
+           <div class="top-row">
+             <h4>Add</h4>
+             <button class="window-close" id="wc1"><i class="fa fa-window-close"></i></button>
+
+           </div>
+
+           <hr>
+           <div id="details-buttons">
+             <button id="saving-goal-btn">Saving Goal</button><br>
+             <button id="add-income-btn">Income</button><br>
+             <button id="add-expense-btn">Expense</button><br>
+           </div>
+
+         </div>
+
+
+         <div class="details details-expenses">
+
+           <div class="top-row">
+             <h4>Add Expense</h4>
+             <button class="window-close" id="wc2"><i class="fa fa-window-close"></i></button>
+           </div>
+           <hr>
+           <div class="information-input-area">
+            <p>Amount:</p>
+             <input type="text" name="firstname" value=""><br>
+             <p>Category:</p>
+             <input list="tasks" name="tasks">
+         <datalist id="tasks">
+             <option value="Car">
+             <option value="House">
+             <option value="Households">
+             <option value="Vacation">
+             <option value="Marriage">
+             <option value="Family">
+           </datalist>
+           <br>  <p>Date</p>
+             <input type="date" id="start-saving" name="saving-start"
+              value="2019-08-03"
+              min="2018-01-01" max="2020-12-31">
+           </div>
+           <div class="bottom-row-buttons">
+             <button id="cancel-btn-expense">Cancel</button>
+             <button id="addbtn">Add</button>
+           </div>
+
+         </div>
+
+       <div class="details details-income">
+
+
+         <div class="top-row">
+               <h4>Add Income</h4>
+               <button class="window-close" id="wc3"><i class="fa fa-window-close"></i></button>
+         </div>
+             <hr>
+         <div class="information-input-area">
+               <p>Amount:</p>
+               <input type="text" name="firstname" value=""><br>
+               <p>Category</p>
+               <input list="source" name="source">
+             <datalist id="source">
+               <option value="Salary">
+               <option value="Property">
+               <option value="Business">
+               <option value="Incestral">
+            </datalist>
+             <br> <p>Date</p>
+             <input type="date" id="savings-start" name="savings-start"
+                value="2019-08-03"
+                min="2019-01-01" max="2020-12-31">
+         </div>
+
+         <div class="bottom-row-buttons"  >
+               <button id="cancel-btn-income">Cancel</button>
+               <button id="addbtn">Add</button>
+         </div>
+       </div>
+
+         <div class="details details-savings">
+             <div class="top-row">
+                 <h4>New Goal</h4>
+                 <button class="window-close" id="wc4"><i class="fa fa-window-close"></i></button>
+           </div>
+               <hr>
+           <div class="information-input-area">
+                 <p>Save For:</p>
+                 <input type="text" name="" value=""><br>
+                 <p>Amount:</p>
+                   <input type="text" name="" value=""><br>
+                <p>When You Need:</p>
+               <input type="date" id="savings-start" name="savings-start"
+                  value="2019-08-03"
+                  min="2019-01-01" max="2020-12-31">
+           </div>
+
+           <p id="savings-quote">You have to save $100 every week <br> to reach tour goal</p>
+
+           <div class="bottom-row-buttons"  >
+                 <button id="cancel-btn-savings">Cancel</button>
+                 <button id="addbtn">Start Saving</button>
+           </div>
+
+           </div>
+     </div>
+
+
+
+
+
+
+
+
+
+<main class="history-main">
+  <div class="years">
+    <article>
+      <h3>2019</h3>
+      <hr>
+      <div class="graph-history" id="graph-history">
+
+        <canvas id="myChart" width="30px" height="30px"></canvas>
+
+        <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+
+  </div>
+  <div class="months">
+    <article>
+      <h3>Janurary</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart1" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>February</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart2" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>March</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart3" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>April</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart4" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>May</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart5" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>June</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart6" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>July</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart7" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>August</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart8" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>September</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart9" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>October</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart10" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>November</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart11" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+    <article>
+      <h3>December</h3>
+      <HR>
+      <div class="graph-history">
+
+                <canvas id="myChart12" width="30px" height="30px"></canvas>
+
+                <script src="../js/graph.js"></script>
+
+      </div>
+    </article>
+  </div>
+</main>
+<script src="../js/menu.js"></script>
+<!-- <script src="../js/script.js"></script> -->
+
+
+</body>
+</html>

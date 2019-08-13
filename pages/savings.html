@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>TrackE</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <!-- <link rel="stylesheet" href="../css/nav.css"> -->
+  <link rel="stylesheet" href="../css/navigation.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Saving graph  -->
+  <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+  <script src="../js/liquidFillGauge.js" language="JavaScript"></script>
+  <style>
+      .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+  </style>
+
+</head>
+<body>
+  <header>
+    <div class="menu-mobile">
+      <button class="menu-toggle"><i class="fa fa-bars"></i></button>
+    </div>
+    <div class="site-logo-main">
+      <a href="../dashboard.html"><img src="../images/TrackE_logo.png" alt="tracke_logo"></a>
+    </div>
+    <nav class="site-nav-main">
+      <ul>
+        <li><a href="../dashboard.html">Dashboard</a></li>
+        <li><a class="active" href="../pages/savings.html">Savings</a></li>
+        <li><a href="../pages/history.html">History</a></li>
+        <li><a href="../pages/settings.html">Settings</a></li>
+      </ul>
+    </nav>
+    <div class="plus-sign">
+       <i class="fa fa-plus-circle add" style="font-size:40px;"></i>
+    </div>
+   </header>
+
+
+   <div class="details-main">
+
+         <div class="details details-add">
+           <div class="top-row">
+             <h4>Add</h4>
+             <button class="window-close" id="wc1"><i class="fa fa-window-close"></i></button>
+
+           </div>
+
+           <hr>
+           <div id="details-buttons">
+             <button id="saving-goal-btn">Saving Goal</button><br>
+             <button id="add-income-btn">Income</button><br>
+             <button id="add-expense-btn">Expense</button><br>
+           </div>
+
+         </div>
+
+
+         <div class="details details-expenses">
+
+           <div class="top-row">
+             <h4>Add Expense</h4>
+             <button class="window-close" id="wc2"><i class="fa fa-window-close"></i></button>
+           </div>
+           <hr>
+           <div class="information-input-area">
+            <p>Amount:</p>
+             <input type="text" name="firstname" value=""><br>
+             <p>Category:</p>
+             <input list="tasks" name="tasks">
+
+
+         <datalist id="tasks">
+             <option value="Car">
+             <option value="House">
+             <option value="Households">
+             <option value="Vacation">
+             <option value="Marriage">
+             <option value="Family">
+           </datalist>
+           <br>  <p>Date</p>
+             <input type="date" id="start-saving" name="saving-start"
+              value="2019-08-03"
+              min="2018-01-01" max="2020-12-31">
+           </div>
+           <div class="bottom-row-buttons">
+             <button id="cancel-btn-expense">Cancel</button>
+             <button id="addbtn">Add</button>
+           </div>
+
+         </div>
+
+       <div class="details details-income">
+
+
+         <div class="top-row">
+               <h4>Add Income</h4>
+               <button class="window-close" id="wc3"><i class="fa fa-window-close"></i></button>
+         </div>
+             <hr>
+         <div class="information-input-area">
+               <p>Amount:</p>
+               <input type="text" name="firstname" value=""><br>
+               <p>Category</p>
+
+               <input list="source" name="source">
+             <datalist id="source">
+               <option value="Salary">
+               <option value="Property">
+               <option value="Business">
+               <option value="Incestral">
+            </datalist>
+            <br>  <p>Date</p>
+              <input type="date" id="start-saving" name="saving-start"
+               value="2019-08-03"
+               min="2018-01-01" max="2020-12-31">
+         </div>
+
+         <div class="bottom-row-buttons"  >
+               <button id="cancel-btn-income">Cancel</button>
+               <button id="addbtn">Add</button>
+         </div>
+       </div>
+
+         <div class="details details-savings">
+             <div class="top-row">
+                 <h4>New Goal</h4>
+                 <button class="window-close" id="wc4"><i class="fa fa-window-close"></i></button>
+           </div>
+               <hr>
+           <div class="information-input-area">
+                 <p>Save For:</p>
+                 <input type="text" name="" value=""><br>
+                 <p>Amount:</p>
+                   <input type="text" name="" value=""><br>
+                <p>When You Need:</p>
+               <input type="date" id="savings-start" name="savings-start"
+                  value="2019-08-03"
+                  min="2019-01-01" max="2020-12-31">
+           </div>
+
+           <p id="savings-quote">You have to save $100 every week <br> to reach tour goal</p>
+
+           <div class="bottom-row-buttons"  >
+                 <button id="cancel-btn-savings">Cancel</button>
+                 <button id="addbtn">Start Saving</button>
+           </div>
+
+           </div>
+     </div>
+
+
+
+
+
+
+
+
+
+<main>
+  <article class="saving-goals">
+    <div class="graph-saving-goals">
+      <svg id="fillgauge1" height="250" onclick="gauge1.update(NewValue());"></svg>
+    </div>
+    <script language="JavaScript">
+        var gauge1 = loadLiquidFillGauge("fillgauge1", 55);
+        var config1 = liquidFillGaugeDefaultSettings();
+        config1.circleColor = "#FF7777";
+        config1.textColor = "#FF4444";
+        config1.waveTextColor = "#FFAAAA";
+        config1.waveColor = "#FFDDDD";
+        config1.circleThickness = 0.2;
+        config1.textVertPosition = 0.2;
+        config1.waveAnimateTime = 1000;
+        var gauge2= loadLiquidFillGauge("fillgauge2", 28, config1);
+        var config2 = liquidFillGaugeDefaultSettings();
+        config2.circleColor = "#D4AB6A";
+        config2.textColor = "#553300";
+        config2.waveTextColor = "#805615";
+        config2.waveColor = "#AA7D39";
+        config2.circleThickness = 0.1;
+        config2.circleFillGap = 0.2;
+        config2.textVertPosition = 0.8;
+        config2.waveAnimateTime = 2000;
+        config2.waveHeight = 0.3;
+        config2.waveCount = 1;
+        var gauge3 = loadLiquidFillGauge("fillgauge3", 60.1, config2);
+        var config3 = liquidFillGaugeDefaultSettings();
+        config3.textVertPosition = 0.8;
+        config3.waveAnimateTime = 5000;
+        config3.waveHeight = 0.15;
+        config3.waveAnimate = false;
+        config3.waveOffset = 0.25;
+        config3.valueCountUp = false;
+        config3.displayPercent = false;
+        var gauge4 = loadLiquidFillGauge("fillgauge4", 50, config3);
+        var config4 = liquidFillGaugeDefaultSettings();
+        config4.circleThickness = 0.15;
+        config4.circleColor = "#808015";
+        config4.textColor = "#555500";
+        config4.waveTextColor = "#FFFFAA";
+        config4.waveColor = "#AAAA39";
+        config4.textVertPosition = 0.8;
+        config4.waveAnimateTime = 1000;
+        config4.waveHeight = 0.05;
+        config4.waveAnimate = true;
+        config4.waveRise = false;
+        config4.waveHeightScaling = false;
+        config4.waveOffset = 0.25;
+        config4.textSize = 0.75;
+        config4.waveCount = 3;
+        var gauge5 = loadLiquidFillGauge("fillgauge5", 60.44, config4);
+        var config5 = liquidFillGaugeDefaultSettings();
+        config5.circleThickness = 0.4;
+        config5.circleColor = "#6DA398";
+        config5.textColor = "#0E5144";
+        config5.waveTextColor = "#6DA398";
+        config5.waveColor = "#246D5F";
+        config5.textVertPosition = 0.52;
+        config5.waveAnimateTime = 5000;
+        config5.waveHeight = 0;
+        config5.waveAnimate = false;
+        config5.waveCount = 2;
+        config5.waveOffset = 0.25;
+        config5.textSize = 1.2;
+        config5.minValue = 30;
+        config5.maxValue = 150
+        config5.displayPercent = false;
+        var gauge6 = loadLiquidFillGauge("fillgauge6", 120, config5);
+        function NewValue(){
+            if(Math.random() > .5){
+                return Math.round(Math.random()*100);
+            } else {
+                return (Math.random()*100).toFixed(1);
+            }
+        }
+    </script>
+    <div class="details-saving-goals">
+      <h3>Car</h3>
+      <p>End Date: 03/08/2020</p>
+   		<h4> Amount: $30000</h4>
+		<h4> You Saved: $15549</h4>
+     
+    </div>
+  </article>
+</main>
+<script src="../js/menu.js"></script>
+
+
+
+</body>
+</html>
